@@ -1,0 +1,12 @@
+getgenv().farmer = false
+
+while wait() do
+	if getgenv().farmer == true then
+		game:GetService("ReplicatedStorage").RemoteEvent:FireServer("Powers.Pressup")
+		game:GetService("ReplicatedStorage").RemoteEvent:FireServer("Jumping")
+		game:GetService("ReplicatedStorage").RemoteEvent:FireServer("Meditate.ChangeState", true)
+		game:GetService("ReplicatedStorage").RemoteEvent:FireServer("Powers.Punch")
+		game:GetService("ReplicatedStorage").GameClient.Events.controlEvents.fire:Fire("Enum.UserInputState.Begin")
+		game:GetService("ReplicatedStorage").GameClient.Events.controlEvents.fire:Fire("Enum.UserInputState.End")
+	end
+end
